@@ -1,0 +1,95 @@
+.footer {
+    padding: 2em;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.footer__section {
+    flex: 1;
+}
+
+.footer__title {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.footer__title_logo {
+    font-size: 3em;
+    font-family: 'Rooble', sans-serif;
+    font-weight: 700;
+    margin: 0;  
+    color: rgba(255, 255, 255, 0.4);
+    background-color: #191B22; 
+    padding: 0.3em;
+    border-radius: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+    filter: blur(5px);
+}
+
+.footer__title_logo:hover {
+    color: rgba(255, 111, 97, 1);
+    filter: blur(0) ;
+    cursor: pointer;
+    background-color: #252731; 
+}
+
+.footer__text {
+    font-size: 1em;
+    margin: 0.2em 0;
+    color: #555;
+}
+
+.footer__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__item {
+    margin: 0 0.5em;
+}
+
+.footer__link {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__icon {
+    font-size: 2em;
+}
+
+.footer__item_twitter .footer__link:hover .footer__icon {
+    color: #1da1f2; /* Twitter color */
+}
+
+.footer__item_instagram .footer__link:hover .footer__icon {
+    color: #e4405f; /* Instagram color */
+}
+
+.footer__item_youtube .footer__link:hover .footer__icon {
+    color: #ff0000; /* YouTube color */
+}
+
+.footer__bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+

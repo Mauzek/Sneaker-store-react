@@ -1,0 +1,84 @@
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  outline: #000 2px solid;
+  outline-offset: -0.3em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: 610px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profilePage h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.profilePage .ant-form-item {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.profilePage .ant-form-item-label {
+  text-align: left;
+}
+
+.profilePage .ant-form-item-control {
+  text-align: left;
+}
+
+.profilePage .submitButton {
+  width: 100%;
+  background-color: #ff6f61;
+  color: #fff;
+  outline: #ff6f61 2px solid;
+  transition: background-color 0.2s, color 0.3s, outline-offset 0.1s;
+}
+
+.profilePage .submitButton:hover {
+  background-color: transparent;
+  color: #ff6f61;
+  outline-offset: 0.3em;
+}
+
+.profilePage .submitButton:active{
+  color: gray;
+  outline: 2px gray dashed;
+}
+
+.profilePage .toggleButton {
+  padding: 0;
+  margin-left: 5px;
+  padding: 5px;
+  color: #1890ff;
+}
+
+.profilePage .toggleButton:hover {
+  text-decoration: underline;
+}
+
+.formColumns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.formColumn {
+  flex: 1;
+  min-width: 200px;
+}

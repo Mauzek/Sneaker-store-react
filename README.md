@@ -1,70 +1,159 @@
-# Getting Started with Create React App
+# Кроссы-и точка
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Логотип проекта](https://i.ibb.co/Kx1nkCH/logo-topaz-denoise-upscale-4x.png)
 
-## Available Scripts
+## Описание
 
-In the project directory, you can run:
+**`Кроссы-и точка.`** — это интернет-магазин кроссовок, построенный на `React JS`. Здесь можно просматривать кроссовки по брендам, добавлять их в корзину, а также оформлять заказы. Используются современные библиотеки для создания приятного интерфейса и удобного взаимодействия с пользователем.
 
-### `npm start`
+## Используемые библиотеки
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Для работы проекта применяются следующие библиотеки:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **`ant-design`**: набор иконок и элементы интерфейса.
+- **`material UI`**: компоненты интерфейса.
+- **`axios`**: работа с HTTP-запросами к API.
+- **`lodash`**: набор утилит для работы с данными.
+- **`zustand`**: библиотека для управления состоянием.
 
-### `npm test`
+## Страницы
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+В проекте представлены следующие страницы:
 
-### `npm run build`
+- **`Главная` (home)**: стартовая страница с актуальными предложениями и акциями.
+- **`Каталог` (catalog)**: просмотр кроссовок с возможностью фильтрации по брендам и категориям.
+- **`Новинки` (new)**: страница с новыми поступлениями.
+- **`Бренды` (brands)**: список доступных брендов.
+- **`Корзина` (cart)**: управление товарами в корзине.
+- **`Профиль` (profile)**: информация о пользователе и его заказах.
+- **`Страница бренда` (sneakerBrands)**: отображение всех моделей выбранного бренда.
+- **`Детали кроссовок` (sneakers)**: подробная информация о конкретной модели.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Для работы с данными в проекте используются два **`MockAPI`**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### API №1 - SneakersCard&&Users
 
-### `npm run eject`
+**Endpoint**: `/sneakers`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Этот **`API`** содержит данные о кроссовках: их `ID`, `изображение`, `название`, `описание`, `категории`, `размеры`, `цену` и `количество` на складе. Пример структуры данных:
+```json
+{
+  "id": 1,
+  "image": "https://i.postimg.cc/brWfY8hF/jordan-1-retro-high-og-sp.png",
+  "title": "Nike Air Max 1",
+  "description": "Классические кроссовки Nike Air Max 1 для стильных и активных.",
+  "category": ["popular"],
+  "size": [
+    { "value": 41, "price": 3700, "quantity": 31 },
+    { "value": 42, "price": 4000, "quantity": 45 }
+  ],
+  "releaseDate": "08/26/2023",
+  "material": ["Кожа 80%", "резина"],
+  "brand": "nike"
+}
+```
+**Endpoint**: `/users`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Этот **`API`** содержит данные о кроссовках: их `ID`, `дату создания`, `имя`, `фамилию`, `город`, `улицу`, `аватар`, `номер телефона`, `email` и `пароль`. Пример структуры данных:
+```json
+{
+    "id": "1",
+    "createdAt": "2024-08-05T11:18:33.818Z",
+    "firstName": "Artyom",
+    "lastName": "ittek",
+    "addressCity": "Movkf",
+    "addressStreet": "Psdfsdfsdf",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1199.jpg",
+    "phone": "82398492734",
+    "email": "enjoyer@gmail.com",
+    "password": "111111",
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### API №1 - Cart&&Orders
+**Endpoint**: `/carts`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Этот **`API`** предоставляет данные о содержимом корзины пользователя: `товары`, их `количество`, `цены`, а также общую `стоимость заказа`. Пример структуры данных:
 
-## Learn More
+```json
+{
+  "items": [
+    {
+      "id": 22,
+      "image": "https://i.ibb.co/7YsddKN/jordan-1-retro-high-og-sp.png",
+      "title": "Reebok Classic Leather 22",
+      "description": "Стильные кроссовки Reebok Classic Leather 22 для повседневной носки.",
+      "size": 40,
+      "price": 3700,
+      "quantity": 1
+    },
+    {
+      "id": 11,
+      "image": "https://i.ibb.co/7YsddKN/jordan-1-retro-high-og-sp.png",
+      "title": "Puma Suede Classic 11",
+      "description": "Эргономичные кроссовки Puma Suede Classic 11 для активного отдыха.",
+      "size": 41,
+      "price": 4700,
+      "quantity": 1
+    }
+  ],
+  "totalQuantity": 2,
+  "totalPrice": 8400,
+  "userId": "1",
+  "cartId": "1"
+}
+```
+**Endpoint**: `/orders`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Этот **`API`** содержит данные о заказах. Пока в разработке, пример структуры данных:
+```json
+{
+  "createdAt": 1722948820,
+  "status": "Оплачен",
+  "totalAmount": 15000,
+  "paymentMethod": "Карта",
+  "shippingAddress": "г. Москва, ул. Пушкина, д. Колотушкина",
+  "paymentStatus": "Завершено",
+  "items": [
+    {
+      "id": 22,
+      "title": "Reebok Classic Leather 22",
+      "size": 40,
+      "price": 3700,
+      "quantity": 1
+    }
+  ],
+  "userId": 1,
+  "orderId": "1"
+}
+```
+---
+## Скриншоты
+#### **`Главная страница`**
+>![Главная страница](https://i.ibb.co/MpNDmS0/main.png) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### **`Страница новинок`**
+>![Страница новинок](https://i.ibb.co/7gFtQLC/new.png)
 
-### Code Splitting
+#### **`Страница брендов`**
+>![Страница брендов](https://i.ibb.co/rtynd7v/brands.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### **`Страница каталога`**
+>![Страница каталога](https://i.ibb.co/SRww2KF/catalog.png)
 
-### Analyzing the Bundle Size
+#### **`Страница корзины`**
+>![Страница корзины](https://i.ibb.co/YjNv4nC/cart.png) 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### **`Страница профиля`**
+>![Страница профиля](https://i.ibb.co/0h2qRqf/profile.png)
 
-### Making a Progressive Web App
+#### **`Страница кроссовка`**
+>![Страница кроссовка](https://i.ibb.co/XVBN2rW/sneakers.png) 
+----
+## Автор Mauzek(Артём)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Почта: artemilliy@gmail.com
+[![Telegram](https://img.shields.io/badge/Telegram-blue?logo=telegram)](https://t.me/tralebys) [![VK](https://img.shields.io/badge/VK-4A76A8?style=for-the-badge&logo=vk&logoColor=white)](https://vk.com/tralebys)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

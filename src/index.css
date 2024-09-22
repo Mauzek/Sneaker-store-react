@@ -1,3 +1,33 @@
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url(/src/assets/fonts/AnonymousPro-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url(/src/assets/fonts/AnonymousPro-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Rooble";
+  src: url(/src/assets/fonts/Rooble_Regular.ttf);
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Anonymous Pro';
+  font-weight: 400;
+  list-style-type: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +37,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff6f61;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  color: white;
+}
+
+.active {
+  background-color: #ff6f61;
+  cursor: pointer;
+  border-radius: 0.5em;
 }

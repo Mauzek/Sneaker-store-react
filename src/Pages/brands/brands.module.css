@@ -1,0 +1,22 @@
+.brands-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .brands__container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+  
+  @media (max-width: 768px) {
+    .brands-page__container {
+      flex-direction: column;
+    }
+  
+    .brands-page__container > * {
+      flex: 1 1 100%;
+    }
+  }
+  

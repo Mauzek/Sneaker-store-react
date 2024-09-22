@@ -1,0 +1,49 @@
+.card-collection__container {
+    margin-top: 1em;
+    
+}
+
+.card-collection__container-inner {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+.card-collection__wrapper {
+    display: flex;
+    
+    flex-wrap: wrap;
+    gap: 4em;
+    width: 60%;
+    max-width: 1160px;
+    margin: 0.5em;
+    padding: 0;
+    list-style-type: none;
+}
+
+.card-collection__item {
+    list-style-type: none;
+    
+}
+
+.card-collection__title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0em;
+    font-family: "Rooble";
+}
+
+.card-collection__divider {
+    width: 40%;
+    max-width: 900px;
+}
+
+@media (max-width: 768px) {
+    .card-collection__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
